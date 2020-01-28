@@ -13,7 +13,14 @@ rand_num = random.randrange(101)
 guess = int(input("Your guess? "))
 guess_count = 1
 
-while guess != rand_num:
+while True:
+    if guess == rand_num:
+        print(
+            f"Well done, {user_name}!"
+            f" You found my number in {guess_count} tries!"
+        )
+        break
+
     if guess < rand_num:
         print("Your guess is too low, try again.")
     elif guess > rand_num:
@@ -21,5 +28,3 @@ while guess != rand_num:
 
     guess = int(input("Your guess? "))
     guess_count += 1
-
-print(f"Well done, {user_name}! You found my number in {guess_count} tries!")
